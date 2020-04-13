@@ -5,7 +5,8 @@ import monsters
 MOVE_SPEED = 7
 WIDTH = 22
 HEIGHT = 32
-COLOR = "#888888"
+COLOR = "#a85832"
+EYES = "#000000"
 JUMP_POWER = 11
 GRAVITY = 0.4
 
@@ -17,8 +18,7 @@ class Player(pygame.sprite.Sprite):
         self.start_y = int(y)
         self.image = pygame.Surface((WIDTH, HEIGHT))
         self.image.fill(pygame.Color(COLOR))
-        self.rect = pygame.Rect(int(x), int(y), WIDTH, HEIGHT)
-
+        self.rect = pygame.Rect(self.start_x, self.start_y, WIDTH, HEIGHT)
         self.x_speed = 0
         self.y_speed = 0
         self.on_ground = True

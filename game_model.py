@@ -25,7 +25,7 @@ class GameModel:
         self.entities = pygame.sprite.Group()
         self.monsters = pygame.sprite.Group()
         self.background.fill(Color(self.background_color))
-        for i in range(1, 9):
+        for i in range(1, 10):
             monster = self.createMonster(0, *lvl["monster_" + str(i)])
             self.entities.add(monster)
             self.monsters.add(monster)
@@ -48,6 +48,11 @@ class GameModel:
     def run(self, screen):
         timer = pygame.time.Clock()
         left = up = right = False
+        mixer.music.load("music/dB soundworks - Can o' Salt.mp3")
+        volume = mixer.music.get_volume()
+        volume /= 12
+        mixer.music.set_volume(volume)
+        mixer.music.play(0, 0)
         while True:
             timer.tick(60)
             left, right, up = self.playerControl(left, right, up)
@@ -72,6 +77,7 @@ class GameModel:
             spike = Spike(args[0], args[1])
             self.entities.add(spike)
             self.platforms.append(spike)
+
 
     def playerControl(self, left, right, up):
         for button in pygame.event.get():
