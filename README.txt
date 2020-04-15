@@ -6,3 +6,6 @@ Windows:
         pip install -r requirements.txt
   4. Когда всё установится ввести команду:
         python main.py
+
+Управление:
+стрелка влево, стрелка вправо, пробел

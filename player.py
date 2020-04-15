@@ -11,7 +11,7 @@ JUMP_POWER = 11
 GRAVITY = 0.4
 
 
-class Player(pygame.sprite.Sprite):
+class SpurdoSpuzzelli(pygame.sprite.Sprite):
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
         self.start_x = int(x)
@@ -66,8 +66,8 @@ class Player(pygame.sprite.Sprite):
                 break
 
     def die(self):
-        self.teleporting(self.start_x, self.start_y)  # перемещаемся в начальные координаты
+        self.teleport(self.start_x, self.start_y)
 
-    def teleporting(self, goX, goY):
-        self.rect.x = goX
-        self.rect.y = goY
+    def teleport(self, x, y):
+        self.rect.x = x
+        self.rect.y = y

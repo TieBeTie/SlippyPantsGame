@@ -1,12 +1,13 @@
-from pygame import *
+import pygame
 
 WIN_WIDTH = 800
-WIN_HEIGHT = 640
+WIN_HEIGHT = 600
+
 
 class Camera(object):
     def __init__(self, camera_func, width, height):
         self.camera_func = camera_func
-        self.state = Rect(0, 0, width, height)
+        self.state = pygame.Rect(0, 0, width, height)
 
     def apply(self, target):
         return target.rect.move(self.state.topleft)
@@ -25,4 +26,4 @@ def camera_configure(camera, target_rect):
     player_height = max(-(camera.height - WIN_HEIGHT), player_height)
     player_height = min(0, player_height)
 
-    return Rect(player_width, player_height, w, h)
+    return pygame.Rect(player_width, player_height, w, h)

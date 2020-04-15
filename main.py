@@ -1,13 +1,12 @@
 import pygame
-from pygame import *
 from game_model import GameModel
 
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((800, 640))
-    pygame.display.set_caption("SpurdoSpudelli")
-    game = GameModel("levels/graphic_test.json")
+    screen = pygame.display.set_mode((800, 600))
+    pygame.display.set_caption("SlippyPants")
+    game = GameModel("levels/graphic_test.json", 800, 600)
     game.run(screen)
 
 
